@@ -10,7 +10,9 @@ conda activate <conda_name>
 
 pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu121
 
-pip install -r environment.txt## Data Preparation
+pip install -r environment.txt
+
+##Data Preparation
 
 1. Download the raw dataset from https://genesys-lab.org/hovering-uavs and convert it into H5 format.  
 2. Alternatively, download the preprocessed dataset directly from https://share.weiyun.com/Mo2LiXtP.
