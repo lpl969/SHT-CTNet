@@ -1,6 +1,7 @@
 # SHT-CTNet
 
 This repository provides the implementation for the paper **“Enhancing Audio-Based Drone Tracking and Classification via Spherical Harmonic Transform.”**
+![image](picture/Network.png)
 
 ## Environment Setup
 
