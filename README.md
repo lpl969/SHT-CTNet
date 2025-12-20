@@ -1,54 +1,29 @@
 # SHT-CTNet
 
-This is the official repository for the paper: **"ENHANCING AUDIO-BASED DRONE TRACKING AND CLASSIFICATION VIA SPHERICAL HARMONIC TRANSFORM"**.
+本仓库对应论文 **“ENHANCING AUDIO-BASED DRONE TRACKING AND CLASSIFICATION VIA SPHERICAL HARMONIC TRANSFORM”** 的实现代码。
 
----
+## 环境准备
 
-## 🛠 Environment Requirement
-
-It is recommended to use `conda` for environment management.
-
-```bash
-# Create and activate the environment
-conda create -n SHT-CTNet python=3.9 -y
-conda activate SHT-CTNet
-
-# Install PyTorch with CUDA 12.1 support
+conda create -n <conda_name> python=3.9
+conda activate <conda_name>
 pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu121
+pip install -r environment.txt## 数据准备
 
-# Install other dependencies
-pip install -r environment.txt
-📊 Data Preparation
-The dataset can be obtained in the following two ways:
-Original Dataset: Download from Genesys Lab - Hovering UAVs and process it into .h5 files.
-Pre-processed Data: Directly download the pre-processed H5 files from Weiyun (微云).
-🚀 Train and Test
-All experiments are executed via mix.py. You can switch between different modes by modifying the configuration settings.
-Mode 1: Train Only
-Configuration:
-Set conf.run_for = 'train'
-Set training data path: conf.train_h5 = '../data/9ft_train.h5'
-Run:
-code
-Bash
-python mix.py
-Mode 2: Test Only
-Configuration:
-Set conf.run_for = 'test'
-Set test data path: conf.test_h5 = '../data/9ft_test.h5'
-Run:
-code
-Bash
-python mix.py
-Mode 3: Automatic Train & Test (Default)
-This mode automatically iterates through a predefined set of datasets, completing the entire process of training and then testing for each one.
-Configuration:
-Set conf.run_for = 'auto'
-Run:
-code
-Bash
-python mix.py
-📂 Project Structure
-FAWGN/, SH_CTNet-S/, SH_CTNet_4/, TAWGN/: Model architecture and core processing modules.
-mix.py: Main entry script for training and evaluation.
-environment.txt: List of required Python dependencies.
+1. 从 https://genesys-lab.org/hovering-uavs 获取原始数据并处理成 H5 文件。  
+2. 或直接下载处理好的数据集：https://share.weiyun.com/Mo2LiXtP。
+
+## 训练与测试
+
+### 模式一：仅训练
+- `conf.run_for = 'train'`
+- `conf.train_h5 = '../data/9ft_train.h5'`
+- 运行 `python mix.py`
+
+### 模式二：仅测试
+- `conf.run_for = 'test'`
+- `conf.test_h5 = '../data/9ft_test.h5'`
+- 运行 `python mix.py`
+
+### 模式三：自动训练 + 测试（默认）
+- `conf.run_for = 'auto'`
+- 运行 `python mix.py`，程序会依次遍历预定义数据集并完成训练与测试。
