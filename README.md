@@ -1,6 +1,7 @@
 # SHT-CTNet
 
-This repository provides the implementation for the paper **“Enhancing Audio-Based Drone Tracking and Classification via Spherical Harmonic Transform.”**
+This repository provides the implementation for the paper “Enhancing Audio-Based Drone Tracking and Classification via Spherical Harmonic Transform.”
+
 ![image](picture/Network.png)
 
 ## Environment Setup
@@ -33,3 +34,6 @@ pip install -r environment.txt
 ### Mode 3: Automatic Train & Test (Default)
 - Set `conf.run_for = 'auto'`
 - Run `python mix.py`; it iterates through predefined datasets, completing training and testing for each.
+
+## Experimental Result
+![image](picture/Result.png)
